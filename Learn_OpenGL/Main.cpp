@@ -48,14 +48,14 @@ int main()
 
     //First triangle and second triangle definition
     float firstTriangle[] = {
-        -0.9f, -0.5f, 0.0f,  // left 
-        -0.0f, -0.5f, 0.0f,  // right
-        -0.45f, 0.5f, 0.0f,  // top 
+        -0.9f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,  // left 
+        -0.0f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,  // right
+        -0.45f, 0.5f, 0.0f,  0.0f, 0.0f, 1.0f,  // top 
     };
     float secondTriangle[] = {
-        0.0f, -0.5f, 0.0f,  // left
-        0.9f, -0.5f, 0.0f,  // right
-        0.45f, 0.5f, 0.0f   // top 
+        0.0f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,  // left
+        0.9f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,  // right
+        0.45f, 0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   // top 
     };
 
 
@@ -80,7 +80,8 @@ int main()
     EBO EBO1(first_Indices, sizeof(first_Indices));
 
     // Links VBO to VAO
-    VAO1.LinkVBO(VBO1, 0);
+    VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 6 * sizeof(float), (void*)0);
+    VAO1.LinkAttrib(VBO1, 1, 3, GL_FLOAT, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     // Unbind all to prevent accidentally modifying them
     VAO1.Unbind();
     VBO1.Unbind();
@@ -98,7 +99,8 @@ int main()
     EBO EBO2(second_Indices, sizeof(second_Indices));
 
     // Links VBO to VAO
-    VAO2.LinkVBO(VBO2, 0);
+    VAO2.LinkAttrib(VBO2, 0, 3, GL_FLOAT, 6 * sizeof(float), (void*)0);
+    VAO2.LinkAttrib(VBO2, 1, 3, GL_FLOAT, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     // Unbind all to prevent accidentally modifying them
     VAO2.Unbind();
     VBO2.Unbind();
@@ -107,8 +109,11 @@ int main()
   
     // Generates Shader object using shaders defualt.vert and default.frag
     Shader shaderProgram("default.vert", "default.frag");
-    Shader shaderProgram2("default.vert", "default2.frag");
+    Shader shaderProgram2("default2.vert", "default2.frag");
 
+
+    GLuint uniformID = glGetUniformLocation(shaderProgram2.ID, "triangleColor");
+    GLuint uniformID2 = glGetUniformLocation(shaderProgram.ID, "scale");
 
 
     //main loop
@@ -121,11 +126,18 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
 
         shaderProgram.Activate();
-        
+
+        float timeValue = glfwGetTime();
+        float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+
+        glUniform1f(uniformID2, greenValue);
+
         VAO1.Bind();
         glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
 
         shaderProgram2.Activate();
+
+        glUniform3f(uniformID, 1.0f, 1.0f, 0.0f);
 
         VAO2.Bind();
         glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);

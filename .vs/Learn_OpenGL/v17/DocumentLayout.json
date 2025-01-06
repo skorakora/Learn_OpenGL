@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{58FD650B-A914-409A-A0F4-427DE62E7E23}|Learn_OpenGL\\Learn_OpenGL.vcxproj|C:\\Users\\baniel\\Desktop\\Learn_OpenGL\\Learn_OpenGL\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{58FD650B-A914-409A-A0F4-427DE62E7E23}|Learn_OpenGL\\Learn_OpenGL.vcxproj|solutionrelative:Learn_OpenGL\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58FD650B-A914-409A-A0F4-427DE62E7E23}|Learn_OpenGL\\Learn_OpenGL.vcxproj|C:\\Users\\baniel\\Desktop\\Learn_OpenGL\\Learn_OpenGL\\default.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{58FD650B-A914-409A-A0F4-427DE62E7E23}|Learn_OpenGL\\Learn_OpenGL.vcxproj|solutionrelative:Learn_OpenGL\\default.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "default.vert",
+              "DocumentMoniker": "C:\\Users\\baniel\\Desktop\\Learn_OpenGL\\Learn_OpenGL\\default.vert",
+              "RelativeDocumentMoniker": "Learn_OpenGL\\default.vert",
+              "ToolTip": "C:\\Users\\baniel\\Desktop\\Learn_OpenGL\\Learn_OpenGL\\default.vert",
+              "RelativeToolTip": "Learn_OpenGL\\default.vert",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-06T21:23:48.008Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +41,7 @@
               "RelativeDocumentMoniker": "Learn_OpenGL\\Main.cpp",
               "ToolTip": "C:\\Users\\baniel\\Desktop\\Learn_OpenGL\\Learn_OpenGL\\Main.cpp",
               "RelativeToolTip": "Learn_OpenGL\\Main.cpp",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAYwIQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-05T15:27:50.829Z",
               "EditorCaption": ""
